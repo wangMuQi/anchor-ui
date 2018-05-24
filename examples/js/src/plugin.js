@@ -20,6 +20,11 @@ $(document).ready(function () {
     })
   }
 
+  /* 过滤器组件 */
+  {
+    $('#basicTransfer').transfer()
+  }
+
   /* 表格组件 */
   {
     $('#basicTable').on('filter.changed.anchor.table', function (event, data) {
@@ -97,6 +102,15 @@ $(document).ready(function () {
       animation: 100,
       ghostClass: 'anchor-sortable-ghost',
       chosenClass: 'anchor-chosen-ghost',
+    })
+  }
+
+  {
+    $('[data-toggle="slider"]').slider()
+    // $('[data-toggle="slider"]').slider('getActiveKey')
+    // $('[data-toggle="slider"]').slider('disableToggle')
+    $('[data-toggle="slider"]').on('change.anchor.slider', function(e, key){
+      console.log(key)
     })
   }
 })
